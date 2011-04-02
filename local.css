@@ -12,3 +12,8 @@ div#content blockquote {
 	-moz-border-radius: 0.5em;
 	-webkit-border-radius: 0.5em;
 }
+
+div#content blockquote.p {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
