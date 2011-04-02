@@ -1,3 +1,5 @@
+[[!meta title="Syncable tools for the offline web"]]
+
 News
 ====
 
