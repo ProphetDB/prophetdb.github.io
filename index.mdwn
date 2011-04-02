@@ -25,3 +25,6 @@ SD (Simple Defects)
 Prophet is flexible enough to be used for all sorts of applications, but we've started with something near and dear to the hearts of most software developers: bug tracking.
 
 SD is a peer to peer bug tracking system which we've built to share with just about anything. Contributors have helped us write adaptors for RT, Hiveminder, Trac, GitHub, Google Code, and Redmine. You can extend SD to sync to other bug tracking tools by writing a small bit of code. If you can help make SD work better with your bug tracker, [drop us a line](/contact/).
+
+*header photo original:
+[dotcompals @ Flickr](http://www.flickr.com/photos/dotcompals/3449854626/)*
