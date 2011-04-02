@@ -2,7 +2,7 @@
 	background-image: url('clouds_header.jpg');
 }
 
-div.content blockquote {
+div#content blockquote {
 	font-style: italic;
 	background: #ffc;
 	padding: 1em;
