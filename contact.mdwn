@@ -1,0 +1,11 @@
+Despite Prophet being designed for "offline" replication, Prophet's developers are nearly constantly online. You can usually find us on IRC and can always contact us by email.
+
+IRC
+===
+
+Prophet's developers hang out on #prophet on irc.freenode.net.
+
+Electronic Mail
+===========
+
+If you're looking for something a little more asynchronous than IRC, electronic mail is always a reasonable option. You can [sign up for the Prophet mailing list or browse the list archives](http://lists.bestpractical.com/mailman/listinfo/prophet) over at Best Practical's mailing list server.
