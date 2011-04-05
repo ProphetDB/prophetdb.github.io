@@ -1,0 +1,33 @@
+This page outlines the installation process for Prophet and SD.
+
+* Install Prophet.
+The following command will get you a copy of the source tree you can install:
+
+>git clone git://github.com/bestpractical/prophet.git
+
+Once you've downloaded Prophet, you can install it:
+
+>cd prophet
+
+>PERL_MM_USE_DEFAULT=1 perl Makefile.PL
+
+>make test
+
+>make install
+
+*  Install SD.
+
+The following command will get you a copy of the source tree you can install:
+
+> git clone git://github.com/bestpractical/sd.git
+
+Once you've downloaded SD, you can install it:
+
+>cd sd
+
+>PERL_MM_USE_DEFAULT=1 perl Makefile.PL
+
+>make test
+
+>make install
+
