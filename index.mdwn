@@ -21,7 +21,7 @@ The best place to start learning about Prophet is [a few recent slides decks and
 
 [[Get Prophet]]
 
-SD (Simple Defects)
+[[SD]] (Simple Defects)
 ===============
 
 Prophet is flexible enough to be used for all sorts of applications, but we've started with something near and dear to the hearts of most software developers: bug tracking.
