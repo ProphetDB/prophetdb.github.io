@@ -20,7 +20,7 @@ SD is a peer-to-peer bug tracker that’s built for sharing and use both online 
 
 # Getting SD
 
-You can get SD here.
+Visit the [[Get SD]] page to learn how to get and install SD.
 
 #Support
 
