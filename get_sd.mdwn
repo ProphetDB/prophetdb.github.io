@@ -1,0 +1,17 @@
+Released versions of Prophet are available on CPAN. Prophet is currently undergoing rapid development however, so we recommend installing directly from Git if you can. Prophet's public mirror is currently hosted on GitHub.
+
+The following command will get you a copy of the source tree you can install:
+
+>git clone git://github.com/bestpractical/prophet.git
+
+Once you've downloaded Prophet, you can install it:
+
+>cd prophet
+
+>PERL_MM_USE_DEFAULT=1 perl Makefile.PL
+
+>make test
+
+>make install
+
+In the hopefully unlikely event that Prophet doesn't pass its tests, please tell the developers about it so we can improve things.
