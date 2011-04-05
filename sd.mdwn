@@ -1,0 +1,27 @@
+SD is a peer-to-peer bug tracker that’s built for sharing and use both online and offline. With SD, you can sync your bugs back and forth between other instances of SD, and even between SD and other bug trackers that SD supports.
+
+# Features
+
+* Peer-to-peer syncing between instances
+* Syncing with other bug trackers
+ * [RT](http://bestpractical.com/rt)
+ * [Hiveminder](http://hiveminder.com/)
+ * [Trac](http://trac.edgewall.com/)
+ * [GitHub](http://github.com/)
+ * [Google Code](http://code.google.com/)
+ * [Redmine](http://redmine.org/)
+* Command-line interface, including an interactive shell
+* Git and Darcs VCS integration
+* Local, single-user web UI
+* "Hackathon mode": local net sync via Bonjour
+* SQLite and filesystem backends
+* Synchronization via sneakernet
+* Completely free and open source, released under the MIT license
+
+# Getting SD
+
+You can get SD here.
+
+#Support
+
+If you have a problem using SD, submit a bug report or ask for help on *#prophet* on *irc.freenode.net* or SD’s mailing list.
