@@ -1,12 +1,14 @@
-Released versions of Prophet are available on CPAN. Prophet is currently undergoing rapid development however, so we recommend installing directly from Git if you can. Prophet's public mirror is currently hosted on GitHub.
+Released versions of SD are available on CPAN. SD is currently undergoing rapid development however, so we recommend installing directly from Git if you can. SD's public mirror is currently hosted on GitHub.
+
+Before you install SD, you'll need to install Prophet.
 
 The following command will get you a copy of the source tree you can install:
 
->git clone git://github.com/bestpractical/prophet.git
+>git clone git://github.com/bestpractical/sd.git
 
-Once you've downloaded Prophet, you can install it:
+Once you've downloaded SD, you can install it:
 
->cd prophet
+>cd sd
 
 >PERL_MM_USE_DEFAULT=1 perl Makefile.PL
 
@@ -14,4 +16,4 @@ Once you've downloaded Prophet, you can install it:
 
 >make install
 
-In the hopefully unlikely event that Prophet doesn't pass its tests, please tell the developers about it so we can improve things.
+In the hopefully unlikely event that SD doesn't pass its tests, please tell the developers about it so we can improve things.
