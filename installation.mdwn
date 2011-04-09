@@ -3,7 +3,7 @@ This page outlines the installation process for Prophet and SD.
 * Install Prophet.
 The following command will get you a copy of the source tree you can install:
 
->git clone git://github.com/bestpractical/prophet.git
+>git clone git://gitorious.org/prophet/prophet.git
 
 Once you've downloaded Prophet, you can install it:
 
@@ -19,7 +19,7 @@ Once you've downloaded Prophet, you can install it:
 
 The following command will get you a copy of the source tree you can install:
 
-> git clone git://github.com/bestpractical/sd.git
+> git clone git://gitorious.org/prophet/sd.git
 
 Once you've downloaded SD, you can install it:
 
