@@ -1,0 +1,847 @@
+[[!meta title="Using SD"]]
+
+Getting started with SD
+==========
+
+SD is a peer to peer ticket tracking system built on the Prophet
+distributed database. SD is designed to make it easy to work with tickets
+and to share ticket databases with your collaborators.
+
+To get started with SD, you need a ticket database. To get a ticket
+database, you have two options: You can clone an existing database
+or start a new one.
+
+SD will store its local database replica in the path specified by the
+SD\_REPO environment variable. Generally, you will want to use a shell
+script or alias wrapper to set this variable if you have more than one
+SD replica. Two scripts distributed with SD will set SD\_REPO from the
+VCS of the project directory you're currently in: git-sd and darcs-sd.
+If you write a wrapper for another VCS, please contribute it back!
+
+To clone a ticket database:
+
+>     sd clone --from http://example.com/path/to/sd
+
+
+To start a new ticket database:
+
+>     sd init
+
+
+Or, using the git-sd script within a project checkout:
+
+>     git sd init
+
+
+To configure your project's name, milestones and components:
+
+>     sd settings edit
+
+
+To create a ticket, run:
+
+>     sd ticket create
+
+
+To list all tickets in your database:
+
+>     sd ticket list
+
+
+To publish your database:
+
+>     sd publish joeuser@myhost.example.com:public\_html/mydb
+
+
+To learn a bit more about what you can do with SD:
+
+>     sd help
+
+
+Searching for and displaying tickets
+==========
+
+>     sd ticket search
+
+<p class="code-annotation">      List all tickets with a status that does not match 'closed'.
+      Note that 'list' is an alias for 'search'.
+</p>
+
+>     sd ticket search --regex abc
+
+<p class="code-annotation">      List all tickets with content (in any property) matching 'abc'. Regular
+      expressions are Perl regexes.
+</p>
+
+>     sd ticket search -- status!=closed summary =~ http
+
+<p class="code-annotation">      List all tickets with a status property that does not match closed and a
+      summary matching 'http'.
+</p>
+
+>     sd ticket search --group owner
+    sd ticket search -g owner
+
+       List all tickets with a status property that does not match 'closed',
+       grouped by owner.
+
+>     sd ticket search --sort due
+    sd ticket search -s due
+
+       List all tickets with a status property that does not match 'closed',
+       sorted by due date.
+
+>     sd ticket basics 1234
+
+<p class="code-annotation">      Show basic information (metadata only) for the ticket with local id 1234.
+</p>
+
+>     sd ticket show 1234
+
+<p class="code-annotation">      Show basic information and history and list attachments for the ticket
+      with local id 1234.
+</p>
+
+>     sd ticket details 1234
+
+<p class="code-annotation">      Show basic information, comments, and history, and list attachments for
+      the ticket with local id 1234.
+</p>
+
+>     sd ticket show 1234 --all-props
+    sd ticket show 1234 -a
+
+<p class="code-annotation">      Show all properties of the given ticket, even if they aren't in
+      the database setting common\_ticket\_props (or local configuration
+      variable 'ticket.common\_props' if it exists).
+</p>
+
+>     sd ticket show 1234 --skip-history
+    sd ticket show 1234 -s
+
+<p class="code-annotation">      Show only metadata and a list of attachments for the ticket 1234 (but
+      not history).
+</p>
+
+>     sd ticket show 1234 --with-history
+    sd ticket show 1234 -h
+
+<p class="code-annotation">      Override the ticket.no-implicit-history-display config option if it is
+      set for this replica. (See 'sd help config' for more info.)
+</p>
+
+>     sd ticket history 1234
+
+<p class="code-annotation">      Show history for the ticket with local id 1234.
+</p>
+
+>     sd ticket delete 1234
+
+<p class="code-annotation">      Delete ticket with local id 1234.
+</p>
+
+Creating and Updating tickets
+==========
+
+>     sd ticket create
+
+<p class="code-annotation">      Invokes a text editor with a ticket creation template.
+      Note that 'new' is an alias for 'create'.
+</p>
+
+>     sd ticket create --verbose
+    sd ticket create -v
+
+<p class="code-annotation">      Invokes a text editor with a ticket creation template
+      and also shows descriptions and valid values for
+      properties.
+</p>
+
+>     sd ticket create -- summary="This is a summary" status=open
+
+<p class="code-annotation">      Create a new ticket non-interactively.
+</p>
+
+>     sd ticket update 123 -- status=closed
+
+<p class="code-annotation">      Sets the status of the ticket with local id 123 to closed.
+      Note that 'edit' is an alias for 'update'.
+</p>
+
+>     sd ticket update 123
+
+<p class="code-annotation">      Interactively update the ticket with local id 123 in a text
+      editor.
+</p>
+
+>     sd ticket update 123 --verbose
+    sd ticket update 123 -v
+
+<p class="code-annotation">      Interactively update the ticket with local id 123 in a text
+      editor and show descriptions and valid values for props.
+</p>
+
+>     sd ticket update 123 --all-props
+    sd ticket update 123 -a
+
+<p class="code-annotation">      Interactively update the ticket with local id 123 in a text
+      editor, presenting all the props of the record for editing instead of
+      just those specified by the database setting 'common\_ticket\_props'
+      (or local configuration variable 'common\_ticket\_props' if it exists).
+</p>
+
+>     sd ticket update fad5849a-67f1-11dd-bde1-5b33d3ff2799 -- status=closed
+
+<p class="code-annotation">      Sets the status of the ticket with uuid
+      fad5849a-67f1-11dd-bde1-5b33d3ff2799 to closed.
+</p>
+
+>     sd ticket take 123
+
+<p class="code-annotation">      Sets the owner of ticket 123 to you (your email address is taken
+      from either the 'email\_address' local config variable or the
+      EMAIL environmental variable). An alias of 'take' is 'claim'.
+</p>
+
+>     sd ticket give 123 nobody@example.com
+
+<p class="code-annotation">      Sets the owner of ticket 123 to nobody@example.com.
+      An alias of 'give' is 'assign'.
+</p>
+
+>     sd ticket resolve 123
+    sd ticket close 123
+
+<p class="code-annotation">      Sets the status of the ticket with local id 123 to closed.
+</p>
+
+>     sd ticket resolve 123 --edit
+    sd ticket resolve 123 -e
+
+<p class="code-annotation">      Sets the status of the ticket with local id 123 to closed,
+      allowing you to edit any properties in an editor and
+      optionally add a comment in the process.
+</p>
+
+Working with ticket comments
+==========
+
+>     sd ticket comment 456
+
+<p class="code-annotation">      Add a comment to the ticket with id 456, popping up a text editor.
+</p>
+
+>     sd ticket comment 456 --file=myfile
+    sd ticket comment 456 -f myfile
+
+<p class="code-annotation">      Add a comment to the ticket with id 456, using the content of 'myfile'.
+</p>
+
+>     sd ticket comment 456 --content="The text of the comment."
+    sd ticket comment 456 -m "The text of the comment."
+
+<p class="code-annotation">      Add a comment to the ticket with id 456, specifying its content on
+      the commandline.
+</p>
+
+>     sd ticket comment list
+
+<p class="code-annotation">      List all ticket comments.
+</p>
+
+>     sd ticket comment show 4
+
+<p class="code-annotation">      Show ticket comment 4 and all metadata.
+</p>
+
+>     sd ticket comments 9
+
+<p class="code-annotation">      Show all comments belonging to the ticket with id 9.
+</p>
+
+Working with ticket attachments
+==========
+
+>     sd ticket attachment create 456 --file bugfix.patch
+    sd ticket attachment create 456 -f bugfix.patch
+
+<p class="code-annotation">      Create a new attachment on this ticket from the file 'bugfix.patch'.
+</p>
+
+>     sd ticket attachment list 456
+
+<p class="code-annotation">      Show all attachemnts on ticket 456.
+</p>
+
+>     sd ticket attachment show 567
+
+<p class="code-annotation">      Show the properties of attachment 567 (including the content).
+</p>
+
+>     sd ticket attachment content 567
+
+<p class="code-annotation">      Send the content of attachment 567 to STDOUT.
+</p>
+
+>     sd ticket attachment content 567 > to\_apply.patch
+
+<p class="code-annotation">      Save the contents of attachment 567 to a file so the patch
+      can be applied.
+</p>
+
+Sharing ticket databases
+==========
+
+>     sd clone --from http://example.com/path/to/sd
+
+<p class="code-annotation">      Create a new copy (replica) of a published SD replica from an
+      http, ftp or file URL.
+</p>
+
+>     sd pull --from http://example.com/path/to/sd
+
+<p class="code-annotation">      Integrate changes from a published SD replica over http, ftp or 
+      file URL.
+</p>
+
+>     sd pull --all (or -a)
+
+<p class="code-annotation">      Integrate changes from all replicas this replica has pulled from
+      before.
+</p>
+
+>     sd pull --local (or -l)
+
+<p class="code-annotation">      Integrate changes from all replicas currently announcing themselves
+      on the local network using Bonjour.
+</p>
+
+>     sd publish --to jesse@server:path/to/destination
+
+<p class="code-annotation">      Publish a copy of this replica to a remote server using rsync.
+</p>
+
+>     sd publish --html --replica --to jesse@server:path/to/destination
+
+<p class="code-annotation">      Publish a copy of this replica, including a static html representation,
+      to a remote server using rsync.
+</p>
+
+>     sd server --port 9876
+
+<p class="code-annotation">      Start an sd replica server on port 9876. This command will make your 
+      replica browsable and pullable by anyone with remote access to your 
+      computer. Changes will only be accepted from the local machine.
+</p>
+
+<p class="code-annotation">      To clone from this replica use:
+</p>
+
+          sd clone --from http://hostname\_for\_server:9876/replica/
+
+<p class="code-annotation">      Adjust port to the server, and notice the /replica/ path.
+</p>
+
+>     sd browser --port 9876
+
+<p class="code-annotation">      Do the same as the server command, but also open up the server's
+      front page in your browser.
+</p>
+
+SD can sync to external systems as well as itself. Currently, there 
+are foreign replica types for:
+
+>     RT ([http://bestpractical.com/rt](http://bestpractical.com/rt))
+    Hiveminder ([http://hiveminder.com/](http://hiveminder.com/))
+    Trac ([http://trac.edgewall.com](http://trac.edgewall.com))
+    Google Code ([http://code.google.com](http://code.google.com))
+    GitHub ([http://github.com](http://github.com)). 
+
+
+Read-only support is available for:
+
+     Redmine ([http://redmine.org](http://redmine.org))
+
+If you're interested in building a replica type for your bug 
+tracker, you should get in touch with SD's developers (see
+[http://syncwith.us/contact](http://syncwith.us/contact)).
+
+The RT server is specified as as rt:serveraddress|Queue|Query
+
+>     sd clone --from "rt:[http://rt3.fsck.com](http://rt3.fsck.com)|rt3|Owner='jesse'"
+
+<p class="code-annotation">      Create a local replica and pull data from a foreign replica.
+</p>
+
+>     sd push --to "rt:[http://rt3.fsck.com](http://rt3.fsck.com)|rt3|Owner='jesse'"
+
+<p class="code-annotation">      Push changes to the given foreign replica. Foreign replica
+      schemas will vary based on the replica type.
+</p>
+
+>     sd pull --from "rt:[http://rt3.fsck.com](http://rt3.fsck.com)|rt3|Owner='jesse'"
+
+<p class="code-annotation">      Pull changes from a foreign replica to be merged into the
+      local replica.
+</p>
+
+>     Cloning from Google Code
+
+
+>     sd clone --from gcode:k9mail
+
+
+>     Cloning from Trac
+
+
+>     sd clone --from trac:https://trac.parrot.org/parrot
+
+
+>     Cloning from GitHub
+
+
+>     sd clone --from github:miyagawa/remedie
+
+
+SD uses LWP for HTTP access, so it supports any form of authentication
+LWP can use. For instance, you can push and pull from a remote trac
+that uses x509 client certificates by setting the HTTPS\_CERT\_FILE and
+HTTPS\_KEY\_FILE environment variables, and specifying an empty password
+when SD prompts you. For more information, see the documentation for
+LWP and Crypt::SSLeay.
+
+SD also supports naming replicas, so you can push, pull, and publish
+to short, human-friendly names instead of URLs. When a replica is
+initialized, cloned, or published, a [replica "name"] section is created in
+the replica-specific configuration file (replica\_root/config). Its name is, by
+default, the URL you passed to the command. You can change this to a more
+memorable name with:
+
+>     sd config edit
+
+
+You can then use sync commands like this:
+
+>     sd pull --from name
+    sd push --to name
+    sd publish --to name
+
+
+For pull and push, the given name is substituted with the value of the
+replica.name.url config variable. For publish, replica.name.publish-url
+is used. If different urls are needed for push and pull for a given
+replica, you can override replica.name.url with replica.name.push-url
+and/or replica.name.pull-url.
+
+
+Viewing Database History
+==========
+
+You can view a history of all changes to the database using the 'log'
+command. It can be run in the following ways:
+
+>     sd log
+
+<p class="code-annotation">      Shows the last 20 changes.
+</p>
+
+>     sd log --all
+    sd log -a
+
+<p class="code-annotation">      Shows the entire history from start to end.
+</p>
+
+>     sd log <since>..<until>
+
+<p class="code-annotation">      Shows the range of history starting at <since> and ending at
+      <until>. Ranges can be specified using either sequence numbers
+      or an offset from the most recent change, designated by
+      LATEST~offset.
+</p>
+
+Examples:
+
+>     sd log 0..5
+
+<p class="code-annotation">      Shows changes 0 through 5.
+</p>
+
+>     sd log LATEST
+
+<p class="code-annotation">      Shows the most recent change.
+</p>
+
+>     sd log LATEST~4
+
+<p class="code-annotation">      Shows changes from 4 before the most recent change up to the most
+      recent change.
+</p>
+
+>     sd log 2..LATEST~5
+
+<p class="code-annotation">      Shows the second change up through 5 before the latest.
+</p>
+
+>     sd log LATEST~10..LATEST~5
+
+<p class="code-annotation">      Shows changes from 10 before the latest to 5 before the latest.
+</p>
+
+Environment variables
+==========
+
+The following environmental variables can be set to affect SD's
+configuration. Example syntax is for bash-like shells.
+
+>     export SD\_REPO=/path/to/sd/replica
+
+<p class="code-annotation">      Specify where the ticket database SD is using should reside.
+</p>
+
+>     export PROPHET\_EMAIL=jesse@example.com
+
+<p class="code-annotation">      Use 'jesse@example.com' as the creator of changesets. Prophet
+      will use EMAIL if PROPHET\_EMAIL isn't defined.
+</p>
+        
+>     export SD\_CONFIG=/path/to/sd/config/file
+
+<p class="code-annotation">      Specify where the configuration file SD is using should reside.
+      If this variable is specified, no other config file will be
+      loaded.
+</p>
+
+>     export PROPHET\_HISTFILE=~/.sd-history
+
+<p class="code-annotation">      Specify where the interactive shell should store its history.
+</p>
+
+>     export PROPHET\_HISTLENGTH=100
+
+<p class="code-annotation">      Specify how much history the interactive shell should store.
+</p>
+
+>     export PROPHET\_DEVEL=1
+
+<p class="code-annotation">      Turn on various development mode checks, warnings and autoreloading
+      of modules.
+</p>
+
+>     export PROPHET\_REPLICA\_TYPE=prophet
+
+<p class="code-annotation">      Use the prophet native replica type. Other backend replica
+      types are: sqlite.
+</p>
+
+
+For information on SD database configuration files, see 'sd help config'.
+
+Configuration Options
+==========
+
+SD supports a layered configuration system with three configuration
+files: a global file (/etc/sdrc), a user-wide configuration file
+($HOME/.sdrc) and a per-replica configuration file (/path/to/replica/config).
+Configuration variables in more local configuration files override
+those in more global ones.
+
+You can use the 'sd config' command to view what configuration files
+SD has loaded and all loaded configuration variables, as they apply
+to the current replica.
+
+'sd config' can also be used to set configuration variables.
+
+Examples:
+
+>     sd config user.email-address user@example.com
+    sd config --delete user.email-address
+    sd config user.email-address
+
+<p class="code-annotation">      Print the current value of this configuration variable.
+</p>
+>     sd config alias.'this.alias.contains.dots' 'so it must be quoted'
+    sd config edit
+    sd config edit --user
+    sd config edit --global
+
+<p class="code-annotation">      Edit the specified config file in an editor.
+</p>
+
+The configuration file format is similar to that of the VCS 'Git'. See
+[http://www.kernel.org/pub/software/scm/git/docs/git-config.html](http://www.kernel.org/pub/software/scm/git/docs/git-config.html) for
+specifics. The biggest thing you need to know is that the config file
+contains key/value variables, contained in sections and subsections.
+
+In the help documents, we'll refer to variables in the manner:
+"section-name.subsection-name.variable-name". In a configuration file,
+this would look like:
+
+>     [section-name "subsection-name"]
+
+        variable-name = value
+
+Here's an example of an actual configuration file, aimed at being
+a user-wide config file that affects all bug databases:
+
+>     [user]
+
+        email-address = me@example.com
+>     [ticket]
+
+        summary-format = %5.5s,$luid | %8.8s,status | %7.7s,component |%12.12s,owner| %-44.44s,summary
+        default-group = milestone
+>     [alias]
+
+        mine = ticket list -- owner=~me status!~closed|rejected
+
+Currently, the following configuration variables are available (sorted
+by configuration file section):
+
+>     ticket.summary-format = %4s },$luid | %-11.11s,status | %-60.60s,summary
+
+<p class="code-annotation">      Specifies how to format ticket summaries (when listing tickets, e.g.).
+      (See also: 'sd help ticket.summary-format'.)
+</p>
+
+>     ticket.common-props = id,summary,status,owner,created,original\_replica
+
+<p class="code-annotation">      A comma-separated list of ticket properties that are most-often
+      used. These properties will be shown by default in the 'ticket
+      show' command and presented for editing when interactively
+      creating or updating tickets. (Overrides the database-wide
+      setting of the same name.)
+</p>
+
+>     ticket.default-sort = status
+
+<p class="code-annotation">      Bug property to determine order of display when displaying lists of
+      tickets. (Can be any property; will be compared lexically.)
+</p>
+
+>     ticket.<prop>.sort-undef-last = true
+
+<p class="code-annotation">      When sorting on <prop>, setting this will make tickets where
+      the property is undefined sort *after* any records where the
+      property *is* defined. (The default is the opposite.)
+      Useful for e.g. due dates.
+</p>
+
+>     ticket.default-group = milestone
+
+<p class="code-annotation">      Bug property to group tickets by when displaying lists of tickets. (Can
+      be any property.)
+</p>
+
+>     ticket.show.disable-history = 1
+
+<p class="code-annotation">      Don't display ticket history when running 'sd ticket show'. Can
+      be overridden by passing the '--with-history' arg to the
+      command.
+</p>
+
+>     user.email-address = foo@bar.com
+
+<p class="code-annotation">      Specifies an email address to use as the default for tickets'
+      reporter field. (Overrides the EMAIL environmental variable if
+      that is also set.)
+</p>
+
+>     server.default-port = 8080
+
+<p class="code-annotation">      Specifies a default port to use for the 'server' and 'browser'
+      commands. Can still be overridden by passing '--port' to these
+      commands.
+</p>
+
+For information on environmental variables that can affect SD, see
+'sd help environment'.
+
+Creating and Updating tickets
+==========
+
+>     sd ticket create
+
+<p class="code-annotation">      Invokes a text editor with a ticket creation template.
+      Note that 'new' is an alias for 'create'.
+</p>
+
+>     sd ticket create --verbose
+    sd ticket create -v
+
+<p class="code-annotation">      Invokes a text editor with a ticket creation template
+      and also shows descriptions and valid values for
+      properties.
+</p>
+
+>     sd ticket create -- summary="This is a summary" status=open
+
+<p class="code-annotation">      Create a new ticket non-interactively.
+</p>
+
+>     sd ticket update 123 -- status=closed
+
+<p class="code-annotation">      Sets the status of the ticket with local id 123 to closed.
+      Note that 'edit' is an alias for 'update'.
+</p>
+
+>     sd ticket update 123
+
+<p class="code-annotation">      Interactively update the ticket with local id 123 in a text
+      editor.
+</p>
+
+>     sd ticket update 123 --verbose
+    sd ticket update 123 -v
+
+<p class="code-annotation">      Interactively update the ticket with local id 123 in a text
+      editor and show descriptions and valid values for props.
+</p>
+
+>     sd ticket update 123 --all-props
+    sd ticket update 123 -a
+
+<p class="code-annotation">      Interactively update the ticket with local id 123 in a text
+      editor, presenting all the props of the record for editing instead of
+      just those specified by the database setting 'common\_ticket\_props'
+      (or local configuration variable 'common\_ticket\_props' if it exists).
+</p>
+
+>     sd ticket update fad5849a-67f1-11dd-bde1-5b33d3ff2799 -- status=closed
+
+<p class="code-annotation">      Sets the status of the ticket with uuid
+      fad5849a-67f1-11dd-bde1-5b33d3ff2799 to closed.
+</p>
+
+>     sd ticket take 123
+
+<p class="code-annotation">      Sets the owner of ticket 123 to you (your email address is taken
+      from either the 'email\_address' local config variable or the
+      EMAIL environmental variable). An alias of 'take' is 'claim'.
+</p>
+
+>     sd ticket give 123 nobody@example.com
+
+<p class="code-annotation">      Sets the owner of ticket 123 to nobody@example.com.
+      An alias of 'give' is 'assign'.
+</p>
+
+>     sd ticket resolve 123
+    sd ticket close 123
+
+<p class="code-annotation">      Sets the status of the ticket with local id 123 to closed.
+</p>
+
+>     sd ticket resolve 123 --edit
+    sd ticket resolve 123 -e
+
+<p class="code-annotation">      Sets the status of the ticket with local id 123 to closed,
+      allowing you to edit any properties in an editor and
+      optionally add a comment in the process.
+</p>
+
+Command Aliases
+==========
+
+You can create custom command aliases in the aliases section of
+your local configuration files. The format is as follows:
+
+>     [alias]
+
+        command to type = command to translate it to
+
+As an example, you could create an alias to show all tickets assigned
+to you with the alias 'mine':
+
+>     mine = ticket list -- owner=you@domain.com status !~closed|rejected
+
+
+By default, any additional arguments to aliases are appended to the
+replacement text, so you can write something like
+
+>     alias tl = ticket list
+
+
+and
+
+>     tl -- owner=you@domain.com
+
+
+will work like you expect. In order to do more complicated things with
+arguemnts, you can use the number of an argument, prefixed by a '$',
+like this:
+
+>     ts = ticket show $1 -s
+
+
+SD also provides a command for managing aliases: 'sd aliases'. If
+given no arguments, the aliases command will print the active aliases
+for the current repository (including all non-overridden user-wide
+and global aliases, if any). 'sd aliases edit' will present you with an
+editor window in which aliases can be modified. Aliases will be saved to your
+local configuration file when editing is done.
+
+Examples (in all examples, 'alias' can be used anywhere 'aliases' appears
+and vice-versa):
+
+>     sd aliases
+    sd aliases show
+
+<p class="code-annotation">      Show currently active aliases.
+</p>
+
+>     sd aliases edit
+
+<p class="code-annotation">      Edit aliases in an editor window.
+</p>
+
+>     sd alias "command to type" "command to translate to"
+
+<p class="code-annotation">      Set the given alias (or change it if it already exists).
+</p>
+
+>     sd aliases delete "command to type"
+
+<p class="code-annotation">      Delete the given alias.
+</p>
+
+The --user and --global arguments can be used in conjunction with the
+set (and edit) commands to change what configuration file to use.
+By default, the repository-specific configuration file is used.
+
+For more information on local configuration files, see 'sd help config'.
+
+
+Database Settings
+==========
+
+The 'settings' command allows you to modify configuration variables
+that propagate with the current database, known as settings.
+
+If given no arguments, the settings command will print the current
+settings.
+
+The following arguments are supported:
+
+>     show
+
+<p class="code-annotation">      Don't present an editor window, just print the current
+      settings to STDOUT.
+</p>
+
+>     edit
+
+<p class="code-annotation">      Present an editor window containing all the current settings
+      for interactive editing.
+</p>
+
+>     set -- common\_ticket\_props '["id", "summary", "original\_replica"]'
+
+<p class="code-annotation">      Update the setting common\_ticket\_props to the given value.
+      Any setting, including multiple settings, may be set this way.
+</p>
+
+Setting values must be valid JSON.
+
+Settings are not the same as local configuration variables. For
+more information on local configuration, see 'sd help config'.
+
