@@ -21,4 +21,9 @@ Prophet at YAPC::Asia 2008
 Jesse introduced Prophet at
 [YAPC::Asia in May 2008](http://conferences.yapcasia.org/ya2008/talk/985).
 
+<script type="text/javascript" src="http://www.nicovideo.jp/thumb_watch/sm3327042"></script><embed type="application/x-shockwave-flash" id="external_nico_0" name="external_nico_0" src="http://ext.nicovideo.jp/swf/thumbwatch.swf?ts=1213857307" allowscriptaccess="always" bgcolor="#000000" quality="high" flashvars="thumbWatch=1&amp;playerTimestamp=1216370172&amp;v=sm3327042&amp;thumbTitle=Step3%3A%20Prophet%20-%20Jesse%20Vincent&amp;thumbDescription=yapcasia2008%20day%3A1%20track%3A2%20(2008-05-15)%20Jesse%20Vincent%20%20%20next...&amp;thumbImage=http%3A%2F%2Ftn-skr1.smilevideo.jp%2Fsmile%3Fi%3D3327042&amp;thumbWidth=485&amp;thumbHeight=385&amp;mylist_counter=1&amp;movie_type=mp4&amp;wv_id=sm3327042&amp;thumbPlayKey=1216884494.aND4dSfYFWmAwx7WuKIeSLghWhE" height="385" width="485">
+
+Other Talks
+===========
+
 <div style="width:425px" id="__ss_409645"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/obrajesse/prophet-a-peer-to-peer-replicated-disconnected-database" title="Prophet - A peer to peer replicated disconnected database">Prophet - A peer to peer replicated disconnected database</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/409645" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/obrajesse">obrajesse</a> </div> </div>
