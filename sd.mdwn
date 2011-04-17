@@ -1,4 +1,9 @@
-SD is a peer-to-peer bug tracker that’s built for sharing and use both online and offline. With SD, you can sync your bugs back and forth between other instances of SD, and even between SD and other bug trackers that SD supports.
+[[!meta title="SD (Simple Defects)"]]
+
+SD is a peer-to-peer bug tracker that’s built for sharing and use both
+online and offline. With SD, you can sync your bugs back and forth
+between other instances of SD, and even between SD and other bug
+trackers that SD supports.
 
 # Features
 
