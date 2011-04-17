@@ -1,3 +1,5 @@
+[[!meta title="Contributing to SD"]]
+
 Want to help out with SD? Great! We're always interested in new contributors,
 and have plenty of tasks that new people can help out with. Help make SD work
 better for you.
