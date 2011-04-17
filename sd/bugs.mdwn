@@ -1,0 +1,22 @@
+It should come as no surprise that we use SD to track bugs in itself. If you
+have an installed copy of SD, you can create a local clone of the current live
+database by running the following command from a checkout of SD's git
+repository:
+
+> git sd clone --from http://fsck.com/~jesse/sd-bugs/
+
+Or, if you don't have or want a local checkout of SD:
+
+> SD\_REPO=~/sd-bugs sd clone --from http://fsck.com/~jesse/sd-bugs/
+
+You can update your copy of the buglist by running:
+
+> git sd pull --all
+
+Submitting bug reports to SD's developers
+=========================================
+
+For now, submit bug reports on SD against ["App-SD" on CPAN's Request
+Tracker](https://rt.cpan.org/Public/Dist/Display.html?Name=App-SD).  You can
+also send email to <bug-App-SD@rt.cpan.org>. We'll regularly sync
+SD's bug replica with the RT queue.
