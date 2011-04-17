@@ -1,0 +1,72 @@
+Want to help out with SD? Great! We're always interested in new contributors,
+and have plenty of tasks that new people can help out with. Help make SD work
+better for you.
+
+Making the website better
+=========================
+
+This website is a wiki! Please edit liberally&mdash;if you think something
+could be better, chances are it could.
+
+You can also edit the website [using git](/ikiwiki.cgi?do=branchable). [Drop us
+a line](/contact/) if you want to get a commit bit! (Really, just ask. We'd
+love to give you one.)
+
+Increasing test coverage
+========================
+
+We currently have pretty good test coverage, but it can always be better. We're
+publishing coverage analysis reports for [Prophet
+here](http://web.mit.edu/spang/Public/prophet/prophet-coverage/) and [SD
+here](http://web.mit.edu/spang/Public/prophet/sd-coverage/). New tests that
+increase our coverage are gratefully accepted.
+
+Squashing bugs
+==============
+
+If there's anything from [the bug list](/sd/bugs/) that catches your interest,
+or if you find a new bug, feel free to fix it and submit a patch. If it's a
+feature-wishlist bug that requires design alterations, however, you may wish to
+talk to us first to make sure your ideas and ours are in line.
+
+Documentation
+=============
+
+We're currently lacking a good tutorial, screenshots, and other bling to show
+people and help them use SD. Some ideas for things we're looking for here can
+be found by searching for tickets assigned to the "docs" component (from a
+checked out copy of SD's git repository, with the SD bug replica cloned:
+
+> git sd ticket search -- component=docs 'status=~new|open'
+
+Writing foreign replica syncs
+=============================
+
+If you want to write a foreign replica module for an issue tracker that SD
+doesn't support yet, we'd love to hear from you.
+
+Submitting patches
+==================
+
+So, you've written a patch. Rock on! Now you just need to get it applied.
+
+Our preferred way of receiving patches is by email.
+
+From your checkout of Prophet or SD:
+
+> git format-patch origin/master
+
+And then [email us](/contact/) the generated patch(es). Try to send it to the
+right list for whatever you're patching, but most of us are subscribed to both
+lists and we're not too picky about it.
+
+When submitting patches, try to have good commit messages and separate your
+patches into logical units. But don't worry about being perfect&mdash;the worst
+that can happen is that we ask for an amended patch with changes.
+
+Getting commit access
+---------------------
+
+After you've sent us a patch that looks good, you're eligible to get commit
+access to the repository, if you want it. [Ask us](/contact/) if we forget to
+ask you.
