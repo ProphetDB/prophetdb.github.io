@@ -1,3 +1,5 @@
+[[!meta title="Web 2.0 is Sharecropping"]]
+
 Social computing is a good thing. Being able to share data easily has
 led to astounding advances in what we all think of as the web over the
 past few years. It's unlikely that anyone reading this is unaware of all
