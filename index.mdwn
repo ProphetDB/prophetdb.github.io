@@ -26,8 +26,6 @@ Prophet's buzzword-laden pitch reads something like this:
 The best place to start learning about Prophet is
 [a few recent slides decks and videos](/talks/).
 
-[Get Prophet](/prophet/download/)
-
 [[SD]] (Simple Defects)
 ===============
 
