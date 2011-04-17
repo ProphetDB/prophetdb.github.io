@@ -1,4 +1,9 @@
-Released versions of SD are available on CPAN. SD is currently undergoing rapid development however, so we recommend installing directly from Git if you can. SD's public mirror is currently hosted on GitHub.
+[[!meta title="Get SD"]]
+
+Released versions of SD are available on CPAN. SD is currently
+undergoing rapid development however, so we recommend installing
+directly from Git if you can. SD's public mirror is currently hosted on
+GitHub.
 
 Before you install SD, you'll need to install Prophet.
 
@@ -16,4 +21,5 @@ Once you've downloaded SD, you can install it:
 
 >make install
 
-In the hopefully unlikely event that SD doesn't pass its tests, please tell the developers about it so we can improve things.
+In the hopefully unlikely event that SD doesn't pass its tests, please
+tell the developers about it so we can improve things.
