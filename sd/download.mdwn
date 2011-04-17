@@ -2,14 +2,14 @@
 
 Released versions of SD are available on CPAN. SD is currently
 undergoing rapid development however, so we recommend installing
-directly from Git if you can. SD's public mirror is currently hosted on
-GitHub.
+directly from Git if you can.
 
-Before you install SD, you'll need to install Prophet.
+Before you install SD, you'll need to [install
+Prophet](/prophet/download/)..
 
 The following command will get you a copy of the source tree you can install:
 
->git clone git://github.com/bestpractical/sd.git
+>git clone git://gitorious.org/prophet/sd.git
 
 Once you've downloaded SD, you can install it:
 
@@ -22,4 +22,4 @@ Once you've downloaded SD, you can install it:
 >make install
 
 In the hopefully unlikely event that SD doesn't pass its tests, please
-tell the developers about it so we can improve things.
+[tell the developers](/contact/) about it so we can improve things.
