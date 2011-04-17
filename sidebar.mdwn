@@ -1,8 +1,7 @@
-* [Home](/)
+* [Prophet home](/)
+  * [Get Prophet](/prophet/download/)
 * [Why?](/sharecropping/)
 * [Presentations](/talks/)
-* Prophet
-  * [Get Prophet](/prophet/download/)
 * [SD](/sd/)
   * [Get SD](/sd/download/)
   * [Using SD](/sd/using/)
