@@ -1,3 +1,5 @@
+[[!meta title="Tracking bugs in SD"]]
+
 It should come as no surprise that we use SD to track bugs in itself. If you
 have an installed copy of SD, you can create a local clone of the current live
 database by running the following command from a checkout of SD's git
