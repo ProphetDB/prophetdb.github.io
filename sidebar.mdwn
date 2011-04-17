@@ -1,0 +1,12 @@
+* [Home](/)
+* [Why?](/sharecropping/)
+* [Presentations](/talks/)
+* Prophet
+  * [Get Prophet](/prophet/download/)
+* [SD](/sd/)
+  * [Get SD](/sd/download/)
+  * [Using SD](/sd/using/)
+  * [SD for SD (Bugs)](/sd/bugs/)
+  * [Contributing](/sd/contributing/)
+* [Mailing lists](/contact)
+* [Contact us](/contact/)
