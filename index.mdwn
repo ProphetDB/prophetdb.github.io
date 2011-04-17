@@ -6,32 +6,47 @@ News
 2009-08-28
 ----------------
 
-We've just released Prophet and SD 0.7 (Cavil) You can download them from [CPAN](http://search.cpan.org/dist/App-SD/) or [Gitorious](https://gitorious.org/prophet). For more information, have a look at the [blog post](http://blog.bestpractical.com/2009/08/prophet-and-sd-07-cavil-are-now-available.html).
+We've just released Prophet and SD 0.7 (Cavil) You can download them
+from [CPAN](http://search.cpan.org/dist/App-SD/) or
+[Gitorious](https://gitorious.org/prophet). For more information, have a
+look at the [blog post](http://blog.bestpractical.com/2009/08/prophet-and-sd-07-cavil-are-now-available.html).
 
 Prophet
 ======
 
-Prophet is a new kind of database designed for the post Web-2.0 world. It's made to let you collaborate with your friends and coworkers without needing any kind of special server or internet provider.
+Prophet is a new kind of database designed for the post Web-2.0 world.
+It's made to let you collaborate with your friends and coworkers without
+needing any kind of special server or internet provider.
 
 Prophet's buzzword-laden pitch reads something like this:
 
-> A grounded, semirelational, peer to peer replicated, disconnected, versioned, property database with self-healing conflict resolution.
+> A grounded, semirelational, peer to peer replicated, disconnected,
+> versioned, property database with self-healing conflict resolution.
 
-The best place to start learning about Prophet is [a few recent slides decks and videos](http://syncwith.us/talks).
+The best place to start learning about Prophet is
+[a few recent slides decks and videos](/talks/).
 
-[[Get Prophet]]
+[Get Prophet](/prophet/download/)
 
 [[SD]] (Simple Defects)
 ===============
 
-Prophet is flexible enough to be used for all sorts of applications, but we've started with something near and dear to the hearts of most software developers: bug tracking.
+Prophet is flexible enough to be used for all sorts of applications, but
+we've started with something near and dear to the hearts of most
+software developers: bug tracking.
 
-SD is a peer to peer bug tracking system which we've built to share with just about anything. Contributors have helped us write adaptors for RT, Hiveminder, Trac, GitHub, Google Code, and Redmine. You can extend SD to sync to other bug tracking tools by writing a small bit of code. If you can help make SD work better with your bug tracker, [drop us a line](/contact/).
+SD is a peer to peer bug tracking system which we've built to share with
+just about anything. Contributors have helped us write adaptors for RT,
+Hiveminder, Trac, GitHub, Google Code, and Redmine. You can extend SD to
+sync to other bug tracking tools by writing a small bit of code. If you
+can help make SD work better with your bug tracker,
+[drop us a line](/contact/).
 
-#Installation
+Installation
 ================
 
-Follow the installations on the [[Installation]] page to install Prophet and SD.
+Follow the installations on the [[Installation]] page to install Prophet
+and SD.
 
 *header photo original:
 [dotcompals @ Flickr](http://www.flickr.com/photos/dotcompals/3449854626/)*
