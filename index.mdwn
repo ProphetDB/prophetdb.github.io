@@ -43,7 +43,7 @@ can help make SD work better with your bug tracker,
 Installation
 ================
 
-Follow the installations on the [[Installation]] page to install Prophet
+Follow the instructions on the [[installation]] page to install Prophet
 and SD.
 
 *header photo original:
