@@ -1,8 +1,15 @@
 [[!meta title="Get SD"]]
 
-Released versions of SD are available on CPAN. SD is currently
-undergoing rapid development however, so we recommend installing
-directly from Git if you can.
+Released versions of SD are available on CPAN and in
+[Debian](http://packages.debian.org/sid/sd) and
+[Ubuntu](http://packages.ubuntu.com/oneiric/sd). If you're
+running one of these operating systems, you can install the latest
+prophet release like this:
+
+>apt-get install sd
+
+SD is currently undergoing rapid development however, so we recommend
+installing directly from Git if you can.
 
 Before you install SD, you'll need to [install
 Prophet](/prophet/download/)..

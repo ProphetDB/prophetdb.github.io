@@ -1,6 +1,15 @@
-Released versions of Prophet are available on CPAN. Prophet is currently
-undergoing rapid development however, so we recommend installing
-directly from Git if you can.
+[[!meta title="Get Prophet"]]
+
+Released versions of Prophet are available on CPAN and in
+[Debian](http://packages.debian.org/sid/libprophet-perl) and
+[Ubuntu](http://packages.ubuntu.com/oneiric/libprophet-perl). If you're
+running one of these operating systems, you can install the latest
+prophet release like this:
+
+>apt-get install libprophet-perl
+
+Prophet is currently undergoing rapid development however, so we
+recommend installing directly from Git if you can.
 
 The following command will get you a copy of the source tree you can install:
 
