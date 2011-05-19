@@ -5,11 +5,11 @@ have an installed copy of SD, you can create a local clone of the current live
 database by running the following command from a checkout of SD's git
 repository:
 
-> git sd clone --from http://fsck.com/~jesse/sd-bugs/
+> git sd clone --from http://spang.cc/data/sd-bugs/
 
 Or, if you don't have or want a local checkout of SD:
 
-> SD\_REPO=~/sd-bugs sd clone --from http://fsck.com/~jesse/sd-bugs/
+> SD\_REPO=~/sd-bugs sd clone --from http://spang.cc/data/sd-bugs/
 
 You can update your copy of the buglist by running:
 
