@@ -7,7 +7,7 @@ on IRC and can always contact us by email.
 IRC
 ===
 
-Prophet's developers hang out on #prophet on irc.freenode.net.
+Prophet's developers hang out on #prophet on irc.oftc.net.
 
 Electronic Mail
 ===========
