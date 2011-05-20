@@ -72,3 +72,27 @@ Getting commit access
 After you've sent us a patch that looks good, you're eligible to get commit
 access to the repository, if you want it. [Ask us](/contact/) if we forget to
 ask you.
+
+Contributors
+-------------
+* Jesse Vincent	504 (39.72%)
+* Christine Spang	307 (24.19%)
+* sunnavy	138 (10.87%)
+* Shawn Moore	116 (9.14%)
+* Ruslan Zakirov	83 (6.54%)
+* Kang-min Liu	31 (2.44%)
+* Shawn M Moore	25 (1.97%)
+* franck cuny	15 (1.18%)
+* c9s	7 (0.55%)
+* Alec Clews	7 (0.55%)
+* Kevin Falcone	6 (0.47%)
+* Casey West	5 (0.39%)
+* Alex Vandiver	5 (0.39%)
+* Arjen Laarhoven	3 (0.24%)
+* Thomas Sibley	2 (0.16%)
+* Nelson Elhage	2 (0.16%)
+* Michael G. Schwern	2 (0.16%)
+* Hans Dieter Pearcey	2 (0.16%)
+* Chia-liang Kao	2 (0.16%)
+* Yanick Champoux	1 (0.08%)
+
