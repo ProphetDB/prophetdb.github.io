@@ -30,3 +30,7 @@ Visit the [Get SD](/sd/download/) page to learn how to get and install SD.
 # Support
 
 If you have a problem using SD, submit a bug report or ask for help on *#prophet* on *irc.freenode.net* or SD’s mailing list.
+
+# Contributors
+
+Without the contributions of the community SD could not exist so we thank the people on out [Contributors](/sd/contributors) page.
