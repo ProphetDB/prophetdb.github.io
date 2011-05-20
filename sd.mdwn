@@ -33,4 +33,5 @@ If you have a problem using SD, submit a bug report or ask for help on *#prophet
 
 # Contributors
 
-Without the contributions of the community SD could not exist so we thank the people on out [Contributors](/sd/contributors) page.
+Without the contributions of the community SD could not exist so we thank the people on our [Contributing](/sd/contributing) page.
+
