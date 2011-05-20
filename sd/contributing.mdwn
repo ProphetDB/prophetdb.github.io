@@ -73,7 +73,7 @@ After you've sent us a patch that looks good, you're eligible to get commit
 access to the repository, if you want it. [Ask us](/contact/) if we forget to
 ask you.
 
-Contributors
+Contributors (as of 20 May 2011)
 -------------
 * Jesse Vincent	504 (39.72%)
 * Christine Spang	307 (24.19%)
