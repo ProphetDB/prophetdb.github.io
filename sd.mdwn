@@ -27,6 +27,10 @@ trackers that SD supports.
 
 Visit the [Get SD](/sd/download/) page to learn how to get and install SD.
 
+# Foreign ticket tracker compatibility
+
+[More details on the state of SD's various foreign ticket tracker bridges.](/sd/foreign-replicas)
+
 # Support
 
 If you have a problem using SD, submit a bug report or ask for help on *#prophet* on *irc.freenode.net* or SD’s mailing list.
