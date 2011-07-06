@@ -1,0 +1,20 @@
+[[!meta title="Foreign ticket tracker status for SD"]]
+
+Edit me! Keep me up-to-date!
+
+<table>
+<thead>
+<tr><th>ticket tracker</th><th>Pull/Clone</th><th>Push</th><th>Tests</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>RT</td><td>??</td><td>??</td><td>??</td></tr>
+<tr><td>Hiveminder</td><td>good</td><td>??</td>??<td>bugs closed not via
+SD will not be updated in SD (fix waiting on Hiveminder API change)</td></tr>
+<tr><td>Trac</td><td></td><td></td><td></td></tr>
+<tr><td>GitHub</td><td></td><td></td><td></td></tr>
+<tr><td>Google Code</td><td></td><td</td><td></td></tr>
+<tr><td>Lighthouse</td><td></td><td</td><td></td></tr>
+<tr><td>Redmine</td><td></td><td></td><td></td></tr>
+<tr><td>Debbugs</td>started<td>not started</td><td>not started</td><td></td></tr>
+</tbody>
+</table>
