@@ -13,7 +13,7 @@ SD will not be updated in SD (fix waiting on Hiveminder API change)</td></tr>
 <tr><td>Trac</td><td></td><td></td><td></td></tr>
 <tr><td>GitHub</td><td></td><td></td><td></td></tr>
 <tr><td>Google Code</td><td></td><td</td><td></td></tr>
-<tr><td>JIRA</td><td></td><td</td><td>Not started</td></tr>
+<tr><td>JIRA</td><td>??</td><td>??</td><td>Not Started</td></tr>
 <tr><td>Lighthouse</td><td></td><td</td><td></td></tr>
 <tr><td>Redmine</td><td></td><td></td><td></td></tr>
 <tr><td>Debbugs</td><td>started</td><td>not started</td><td>not started</td><td></td></tr>
