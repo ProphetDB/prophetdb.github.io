@@ -14,7 +14,6 @@ trackers that SD supports.
  * [Trac](http://trac.edgewall.com/)
  * [GitHub](http://github.com/)
  * [Google Code](http://code.google.com/)
- * [Redmine](http://redmine.org/)
 * Command-line interface, including an interactive shell
 * Git and Darcs VCS integration
 * Local, single-user web UI
