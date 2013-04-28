@@ -317,16 +317,16 @@ tracker, you should get in touch with SD's developers (see
 
 The RT server is specified as as rt:serveraddress|Queue|Query
 
->     sd clone --from "rt:[http://rt3.fsck.com](http://rt3.fsck.com)|rt3|Owner='jesse'"
+>     sd clone --from "rt:http://rt3.fsck.com|rt3|Owner='jesse'"
 <p class="code-annotation">      Create a local replica and pull data from a foreign replica.
 </p>
 
->     sd push --to "rt:[http://rt3.fsck.com](http://rt3.fsck.com)|rt3|Owner='jesse'"
+>     sd push --to "rt:http://rt3.fsck.com|rt3|Owner='jesse'"
 <p class="code-annotation">      Push changes to the given foreign replica. Foreign replica
       schemas will vary based on the replica type.
 </p>
 
->     sd pull --from "rt:[http://rt3.fsck.com](http://rt3.fsck.com)|rt3|Owner='jesse'"
+>     sd pull --from "rt:http://rt3.fsck.com|rt3|Owner='jesse'"
 <p class="code-annotation">      Pull changes from a foreign replica to be merged into the
       local replica.
 </p>
