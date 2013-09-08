@@ -1,29 +1,41 @@
 [[!meta title="Get Prophet"]]
 
-Released versions of Prophet are available on CPAN and in
-[Debian](http://packages.debian.org/sid/libprophet-perl) and
-[Ubuntu](http://packages.ubuntu.com/oneiric/libprophet-perl). If you're
-running one of these operating systems, you can install the latest
+Prophet is currently undergoing a major refactoring, so we recommend installing
+the released packages if you just want to try using it.
+
+# Releases
+
+## CPAN
+
+https://metacpan.org/module/Prophet
+
+## Distibution Packages
+* [Debian](http://packages.debian.org/libprophet-perl)
+* [Ubuntu](http://packages.ubuntu.com/libprophet-perl).
+If you're running one of these operating systems, you can install the latest
 prophet release like this:
 
 >apt-get install libprophet-perl
 
-Prophet is currently undergoing rapid development however, so we
-recommend installing directly from Git if you can.
+# Git
 
 The following command will get you a copy of the source tree you can install:
 
 >git clone git://gitorious.org/prophet/prophet.git
 
-Once you've downloaded Prophet, you can install it:
+The development branches require [Dist::Zilla](https://metacpan.org/module/Dist::Zilla)
+to build.
+
+Starting from v0.751, the tagged releases are already prepared by Dist::Zilla
+and can be built with:
 
 >cd prophet
 
->PERL_MM_USE_DEFAULT=1 perl Makefile.PL
+>perl Build.PL
 
->make test
+>./Build test
 
->make install
+>./Build install
 
 In the hopefully unlikely event that Prophet doesn't pass its tests,
 please [tell the developers](/contact/) about it so we can improve things.
