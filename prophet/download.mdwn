@@ -7,7 +7,7 @@ the released packages if you just want to try using it.
 
 ## CPAN
 
-https://metacpan.org/module/Prophet
+(https://metacpan.org/module/Prophet)
 
 ## Distibution Packages
 * [Debian](http://packages.debian.org/libprophet-perl)
@@ -29,13 +29,10 @@ to build.
 Starting from v0.751, the tagged releases are already prepared by Dist::Zilla
 and can be built with:
 
->cd prophet
-
->perl Build.PL
-
->./Build test
-
->./Build install
+    cd prophet
+    perl Build.PL
+    ./Build test
+    ./Build install
 
 In the hopefully unlikely event that Prophet doesn't pass its tests,
 please [tell the developers](/contact/) about it so we can improve things.
